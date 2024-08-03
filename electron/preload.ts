@@ -8,10 +8,16 @@ const closeWindow= () => ipcRenderer.send('close-window');
 
 const showNotificationDialog = (question:string, options:string[]) => ipcRenderer.invoke('show-notification-dialog', question, options)
 
+const schedule = (startTime: string,endTime: string,interval: number) => ipcRenderer.send('set-notification-schedule',{ startTime, endTime, interval});
+
+const getNextNotifyTime = () => ipcRenderer.invoke('get-next-notification-time')
+
 contextBridge.exposeInMainWorld('api', {
   notify: notify,
-  exit: closeWindow,
   showNotificationDialog: showNotificationDialog,
+  schedule: schedule,
+  getNextNotifyTime: getNextNotifyTime,
+  exit: closeWindow
 });
 
 
