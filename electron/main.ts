@@ -32,7 +32,7 @@ function createWindow() {
   win = new BrowserWindow({
     icon: path.join(process.env.VITE_PUBLIC, 'notification.png'),
     width: 600,
-    height: 300,
+    height: 500,
     webPreferences: {
       preload: path.join(__dirname, 'preload.mjs'),
       nodeIntegration: true,

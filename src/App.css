@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+.schedular-inputs{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hide{
+  display: none;
+}
